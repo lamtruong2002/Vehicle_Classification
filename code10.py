@@ -26,7 +26,7 @@ def open_image():
         
         # Hiển thị ảnh và kết quả dự đoán
         #image_large = image.resize((400, 300))  # Thu nhỏ ảnh gốc để hiển thị lớn hơn
-        image_zoomed = resized_image.resize((400, 300), resample=Image.NEAREST)  # Phóng to ảnh gốc để hiển thị rõ từng pixel
+        image_zoomed = resized_image.resize((400, 300), resample=Image.NEAREST) 
         image_tk = ImageTk.PhotoImage(image_zoomed)
         image40x30.config(image=image_tk)
         image40x30.image = image_tk
@@ -36,7 +36,7 @@ def open_image():
         imagegoc.config(image=image_tk1)
         imagegoc.image = image_tk1
 
-        result_label.config(text=f'PHÂN LOẠI: {predicted_class}', font=('Arial', 20, 'bold'))  # Điều chỉnh kích thước và kiểu chữ
+        result_label.config(text=f'PHÂN LOẠI: {predicted_class}', font=('Arial', 20, 'bold')) 
         
 
 # Tạo cửa sổ
@@ -46,7 +46,7 @@ window.title("PHÂN LOẠI PHƯƠNG TIỆN GIAO THÔNG")
 # Điều chỉnh kích thước cửa sổ
 window.geometry("800x600")  
 window.configure(bg="lightblue")
-# Tạo nút "Open" để chọn ảnh
+# Tạo nút "Thêm hình ảnh" để chọn ảnh
 open_button = tk.Button(window, text="Thêm hình ảnh",font=('Arial', 12, 'bold'),bg='green', command=open_image, width=15, height=2)  
 open_button.place(x=330, y=150)
 
@@ -60,38 +60,38 @@ imagegoc.place(x=400, y=230)
 result_label = tk.Label(window)
 result_label.place(x=250, y=550)
 
-# Tạo label 1
+# Tạo label hiện tên trường
 label1 = tk.Label(window, text="TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT TPHCM")
 label1.config(font=("Arial", 12,"bold"))
 label1.place(x=210, y=30)
 
-# Tạo label 2
+# Tạo label hiện môn học
 label2 = tk.Label(window, text="MÔN HỌC: TRÍ TUỆ NHÂN TẠO")
 label2.config(font=("Arial", 12))
 label2.place(x=300, y=60)
 
-# Tạo label 3
+# Tạo label hiện Tên và MSSV
 label1 = tk.Label(window, text="HỌ VÀ TÊN: NGUYỄN LAM TRƯỜNG  MSSV:20146189")
 label1.config(font=("Arial", 11))
 label1.place(x=220, y=90)
 
-# Tạo label 4
+#Tạo label hiện chủ đề
 label1 = tk.Label(window, text="CHỦ ĐỀ: PHÂN LOẠI PHƯƠNG TIỆN GIAO THÔNG")
 label1.config(font=("Arial", 11))
 label1.place(x=230, y=120)
 
 
 
-# hiển thị logo Trường
+#Hiển thị logo Trường
 image1 = Image.open("logotruong.jpg")
-image1 = image1.resize((200, 200))  # Thiết lập kích thước hình ảnh
+image1 = image1.resize((200, 200)) 
 photo1 = ImageTk.PhotoImage(image1)
 image_label1 = tk.Label(window, image=photo1)
 image_label1.place(x=0, y=0)
 
 #Hiển thị logo khoa
 image2 = Image.open("logokhoa.jpg")
-image2 = image2.resize((200, 200))  # Thiết lập kích thước hình ảnh
+image2 = image2.resize((200, 200)) 
 photo2 = ImageTk.PhotoImage(image2)
 image_label2 = tk.Label(window, image=photo2)
 image_label2.place(x=600, y=0)
